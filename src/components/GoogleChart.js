@@ -2,14 +2,14 @@ import Chart from 'react-apexcharts'
 import React, {Component} from "react";
 import { VerticalAlignTop } from "@material-ui/core";
 
-export default class ApexChart extends React.Component {
+export default class ApexChart extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       series: [
         {
-          name: "candle",
+          name: "Candlestick ",
           data: [
             {
               x: new Date(1538866800000),
@@ -72,23 +72,25 @@ export default class ApexChart extends React.Component {
             title: "dan"
           }
         },
-        tooltip: {
-          custom: function({ series, seriesIndex, dataPointIndex, w }) {
-            return (
-              '<div class="arrow_box">' +
-              "<span>" +
-              //the whole series is offered as a prop
-              //plus the relevant series in the data if there are more than one
-              //plus the index of where this sits on the x axis
-              //plus a global object w to extract other chart data.
-              //apexcharts.js/src/modules/settings/Globals.js
-              //usw W for better access rather than series[seriesindex][datapointindex]
-              JSON.stringify(w.globals.categoryLabels[dataPointIndex]) +
-              "</span>" +
-              "</div>"
-            );
-          }
-        }
+        // tooltip: {
+        //   custom: function({  dataPointIndex, w }) {
+        //     return (
+        //       <>
+        //       '<div class="arrow_box">' +
+        //       "<span>" +
+        //       //the whole series is offered as a prop
+        //       //plus the relevant series in the data if there are more than one
+        //       //plus the index of where this sits on the x axis
+        //       //plus a global object w to extract other chart data.
+        //       //apexcharts.js/src/modules/settings/Globals.js
+        //       //usw W for better access rather than series[seriesindex][datapointindex]
+        //       JSON.stringify(w.globals.categoryLabels[dataPointIndex]) +
+        //       "</span>" +
+        //       "</div>"
+        //       </>
+        //     );
+        //   }
+        // }
       }
     };
   }
