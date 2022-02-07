@@ -1,0 +1,17 @@
+html,
+body,
+#root,
+.App {
+  height: 85%;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 95.7%;
+}
+.chart-container {
+  flex: 1;
+  height: 100%;
+}
