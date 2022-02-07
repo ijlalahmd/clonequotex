@@ -97,5 +97,17 @@
      margin-top: 20rem;
      margin-left: 5rem;
      position: absolute;
+     display: flex;
     
+}
+.X{
+    background-color: black;
+    color: white;
+    width: 40px;
+    height: 40px;
+   
+}
+.X:hover{
+    color: black;
+    background-color: #fff;
 }
