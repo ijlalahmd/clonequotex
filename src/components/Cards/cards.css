@@ -1,5 +1,5 @@
 .featured{
-    width: 30%;
+    width: 70%;
     padding-top: -1rem ;
     display: flex;
     height: 40px;
@@ -97,5 +97,5 @@
      margin-top: 20rem;
      margin-left: 5rem;
      position: absolute;
-     /* background-color: rgba(213, 223, 255, 0.171); */
+    
 }

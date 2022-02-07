@@ -7,6 +7,15 @@ export default function Dropdown({
       value,
        onChange,
      }) {
+
+        // let arr = [];
+        // options.quotes.foreach(( val, key ) => {
+        //     let obj = {key : val}
+        //     arr.push(obj);
+        // });
+
+        // console.log(arr);
+
          const [open, setOpen] = useState(false);
          console.log(options.quotes)
     
@@ -28,12 +37,13 @@ export default function Dropdown({
 
                 {
                     Object.keys(options.quotes).map((item, i) => (
-                        <li className="travelcompany-input" key={i}>
-                            <span className="input-label"  onClick={() => {
-                        onChange(item);
-                        setOpen(false);
-                    }} >{ options.quotes[item]}</span>
-                        </li>
+                        <div>{[item.slice(0, 3), "/", item.slice(3)].join('') + "               " + options.quotes[item]}</div>
+                    //     <li className="travelcompany-input" key={i}>
+                    //         <span className="input-label"  onClick={() => {
+                    //     onChange(item);
+                    //     setOpen(false);
+                    // }} >{item + ":" + options.quotes[item]}</span>
+                    //     </li>
                     ))
                 }
         </div> 

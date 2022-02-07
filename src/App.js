@@ -10,6 +10,7 @@ import Market from './pages/markets/Market'
 import Trades from './pages/trades/Trades'
 import Withdrawal from './pages/withdrawal/Withdrawal'
 import Balance from './pages/balance/Balance';
+import 'antd/dist/antd.css'; 
 
 
 function App() {
