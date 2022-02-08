@@ -9,15 +9,18 @@ import { GlobalContext } from "../Context/context"
 function Cards() {
     const { state, dispatch } = useContext(GlobalContext);
     let dataArray = state?.dataArray
-    console.log(state?.dataArray, "dataArray");
+    console.log(dataArray, "dataArray in card");
+    // const [arr, setArr] = useState([state?.dataArray])
     const deleteCard = (i) => {
         console.log(dataArray.length, "click on checking length");
         if (dataArray.length > 1) {
             let newArray = dataArray.filter(item => item.i !== i);
             dispatch({ type: "UPDATE_ARRAY", payload: newArray });
+            console.log(newArray,"newArray");
         }
 
     }
+
     return (
         <div className="featured" >
             <div className='slider'>
