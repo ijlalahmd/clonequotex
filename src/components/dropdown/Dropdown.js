@@ -8,21 +8,27 @@ export default function Dropdown({
     onChange,
 }) {
     const { state, dispatch } = useContext(GlobalContext);
-    const [arr, setArr] = useState([])
-    
+  
+    const [arr, setArr] = useState()
+    const [click, setClick] = useState(false);
+    // useEffect(() => {
+    //     setArr(state?.dataArray)
+    //   },[click]);
     const [open, setOpen] = useState(false);
+  
     const pushData = (item,i) => {
-
+        let array=state?.dataArray
         let value = options.quotes[item]
         let obj ={
             i,
             item,
             value,
         }
-        let newarr = [...arr,obj];
+        let newarr = [...array,obj];
         setArr(newarr)
 
         dispatch({ type: "UPDATE_ARRAY", payload: newarr });
+        // setClick(true)
 
     }
 
