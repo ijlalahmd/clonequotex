@@ -1,5 +1,6 @@
 export let data = {
-   dataArray:[]
+   dataArray:[],
+   dropDownOpen:false,
 
 }
 
@@ -9,6 +10,12 @@ export function reducer(state, action) {
             return {
                 ...state,
                 dataArray: action.payload
+            }
+        }
+        case "DROPDOWN_OPEN": {
+            return {
+                ...state,
+                dropDownOpen: action.payload
             }
         }
         default:
