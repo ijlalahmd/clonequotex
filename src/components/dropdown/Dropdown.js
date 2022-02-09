@@ -9,12 +9,9 @@ export default function Dropdown({
 }) {
     const { state, dispatch } = useContext(GlobalContext);
   
-    const [arr, setArr] = useState()
-    const [click, setClick] = useState(false);
-    // useEffect(() => {
-    //     setArr(state?.dataArray)
-    //   },[click]);
-    const [open, setOpen] = useState(false);
+    // const [open, setOpen] = useState(state.dropDownOpen);
+    let open =state.dropDownOpen
+    console.log("open in drop down",open);
   
     const pushData = (item,i) => {
         let array=state?.dataArray
@@ -25,8 +22,6 @@ export default function Dropdown({
             value,
         }
         let newarr = [...array,obj];
-        setArr(newarr)
-
         dispatch({ type: "UPDATE_ARRAY", payload: newarr });
         // setClick(true)
 
@@ -35,19 +30,12 @@ export default function Dropdown({
 
     return <div className='dropdown'>
         <div className='slider1'>
-            <div className='control' onClick={() => setOpen(prev => !prev)}>
+            <div className='control' >
                 <div className='selected-value'>
                     {value ? value.name : prompt}</div>
-                <div className={`arrow ${open ? "open" : null}`} />
             </div>
             <div className={`options ${open ? "open" : null}`}>
-                {/* {options.quotes.map((option) => (
-                    <div 
-                    onClick={() => {
-                        onChange(option);
-                        setOpen(false);
-                    }}>{option} ) </div>
-                ))} */}
+    
 
                 {
                     Object.keys(options.quotes).map((item, i) => (
