@@ -1,0 +1,71 @@
+.trading-chart__assets {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    pointer-events: none;
+    position:absolute;
+    top: 60px;
+    left: 40px;
+    width: 100%;
+    z-index: 9;
+}
+.asset-select {
+    position: relative;
+}
+.trading-chart__assets>* {
+    pointer-events: all;
+}
+.asset-select__button, .asset-select__button.active, .asset-select__button:hover {
+    -webkit-box-shadow: 2px 2px 6px rgb(28 32 46 / 20%);
+    box-shadow: 2px 2px 6px rgb(28 32 46 / 20%);
+}
+.asset-select__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    padding:10px;
+    margin-right: 10px;
+    color: #fff;
+    background-color:#026fd3;
+    border-radius: 8px;
+    border: none;
+    -webkit-transition: all .2s linear;
+    -o-transition: all .2s linear;
+    transition: all .2s linear;
+    -webkit-transition-property: background-color,-webkit-box-shadow;
+    transition-property: background-color,-webkit-box-shadow;
+    -o-transition-property: background-color,box-shadow;
+    transition-property: background-color,box-shadow;
+    transition-property: background-color,box-shadow,-webkit-box-shadow;
+    cursor: pointer;
+}
+.asset-select__button .icon, .asset-select__button svg {
+    -webkit-transition: inherit;
+    -o-transition: inherit;
+    transition: inherit;
+    -webkit-transition-duration: .13333333s;
+    -o-transition-duration: .13333333s;
+    transition-duration: .13333333s;
+    -webkit-transition-property: -webkit-transform;
+    transition-property: -webkit-transform;
+    -o-transition-property: transform;
+    transition-property: transform;
+    transition-property: transform,-webkit-transform;
+}
+.icon-plus, .icon-plus-zoom {
+    width: 12px;
+    height: 12px;
+}
+.selectBTn{
+    transform: rotate(0);
+}
+.selectCloseBTn{
+    transform: rotate(45deg);
+}
