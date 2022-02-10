@@ -1,15 +1,9 @@
-html,
-body,
-#root,
-.App {
-  height: 85%;
-}
 
-.App {
+.chartMaian {
   display: flex;
   flex-direction: column;
   flex: 1;
-  height: 95.7%;
+  height: 80vh;
 }
 .chart-container {
   flex: 1;

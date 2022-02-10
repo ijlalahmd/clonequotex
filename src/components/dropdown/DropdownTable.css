@@ -1,10 +1,10 @@
 
 .table_cont {
     position: absolute;
-    left: 50px;
+    left: 5px;
     width: 496px !important;
     z-index: 999;
-    top: 122px;
+    top: 52px;
     display: flex;
     justify-content: center;
     align-items: center;

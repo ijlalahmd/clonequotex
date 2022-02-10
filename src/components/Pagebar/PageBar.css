@@ -1,96 +1,144 @@
-/* .page__sidebar>:first-child {
-    -ms-flex-negative: 0;
-    flex-shrink: 0;
-}
-.sidebar-section--dark {
-    color: #fff;
-    background-color: var(--sidebar-bg-section);
-    -webkit-box-shadow: 2px 2px 6px rgb(53 58 77 / 20%);
-    box-shadow: 2px 2px 6px rgb(53 58 77 / 20%);
-}
-.sidebar-section--large {
-    padding: 15px;
-    border-radius: 8px;
-}
-.sidebar-section {
-    display: -webkit-box;
-    display: -ms-flexbox;
+
+.flexAllCenter{
     display: flex;
-    padding: 6px;
-    margin-bottom: 10px;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    overflow: hidden;
-    position: relative;
-    min-height: 50px;
-    background-color: var(--trades-bg-color);
-    border-radius: 4px;
-    -webkit-box-shadow: 2px 2px 6px rgb(53 58 77 / 3%);
-    box-shadow: 2px 2px 6px rgb(53 58 77 / 3%);
-}
-.section-deal {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    position: relative;
-}
-.section-deal__header {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
+    justify-content: center;
+}
+.header{
+
     margin-bottom: 10px;
     font-size: 14px;
     line-height: 18px;
     font-weight: 900;
 }
-.flags {
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-}
-
-.section-deal__flags {
-    margin-right: 10px;
-    color: #353a4d;
-}
-.section-deal__name {
+.title{
+    color: white;
     margin-right: auto;
 }
-.section-deal__percent {
+.percantage {
     color: hsla(0,0%,100%,.3);
 }
-.trading-chart__mobile-select {
-    display: none;
+.pageBarCont{
+    background-color: #2b3040;
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px
 }
-.flags {
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
+.btn{
+    margin: 14px 10px 0;
 }
+.inputLabelCont{
+    position: relative;
+    padding: 11px;
+    margin-top: 7px;
+    border-radius: 4px;
+    transition: all .13333333s linear;
+    border: 1px solid hsla(0,0%,100%,.3);
 
-.trading-chart__mobile-select__flags {
-    margin-right: 8px;
-    color: var(--color-white);
 }
-.trading-chart__mobile-select__flags svg {
-    width: 14px;
-    height: 14px;
+.input-label{
+    display: block;
+    padding: 0 4px;
+    position: absolute;
+    left: 10px;
+    top: -9px;
+    color:  hsla(0,0%,100%,.3);
+    background-color: #2b3040;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: left;
+   
+
 }
-.flags>* {
-    float: left;
-    width: 16px;
-    height: 16px;
-    background-color: currentColor;
-    -webkit-box-shadow: 0 0 0 2px currentColor;
-    box-shadow: 0 0 0 2px currentColor;
+.invesBtn{
+    padding-top: 1px;
+}
+.inputVal{
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    padding: 2px 4px;
+    margin: 0 6px;
+    width: 50px;
+    color: #353a4d;
+    background: none;
+    border: none;
+    font-size: 16px;
+    line-height: 20px;
+}
+.Minus button{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    color: #fff;
+    background-color: hsla(0,0%,100%,.1);
     border-radius: 50%;
-} */
+    border: none;
+    padding: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: inherit;
+    -o-transition: inherit;
+    transition: inherit;
+    font-size: 16px;
+    line-height: 20px;
+    
+}
+.plus button{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    color: #fff;
+    background-color: hsla(0,0%,100%,.1);
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: inherit;
+    -o-transition: inherit;
+    transition: inherit;
+    font-size: 16px;
+    line-height: 20px;
+}
+.payoutCont{
+    margin: 10px;
+}
+.dealButton{
+    color: white !important;
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: 4px;
+    border: none;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    user-select: none;
+    -webkit-transition: all .2s linear;
+    -o-transition: all .2s linear;
+    transition: all .2s linear;
+    -webkit-transition-property: color,background-color;
+    -o-transition-property: color,background-color;
+    transition-property: color,background-color;
+    color: #fff;
+    background-color: rgba(255, 255, 255/10%);
+}
+.payoutAmout {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 13px;
+    line-height: 18px;
+    text-align: center;
+}

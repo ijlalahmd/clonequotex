@@ -31,7 +31,7 @@ function Predictcard() {
  
   const { state, dispatch } = useContext(GlobalContext);
   let currency2 = (state.dataArray.length !== 0 ? state.dataArray.slice(-1).map((item) => {
-    var a = item.item
+    var a = item.val
     var z = [a.slice(0, 3), "/", a.slice(3)].join('')
     return z
   }) : null)

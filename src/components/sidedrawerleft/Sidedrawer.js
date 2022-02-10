@@ -106,7 +106,11 @@ export default function MiniDrawer() {
         setOpen(false);
     };
     const navigate = useNavigate();
-    
+    const styles = theme => ({
+        icon: {
+          color: 'white',
+        }
+      });
     const itemsList = [
         {
             text: "Help",
@@ -147,7 +151,7 @@ export default function MiniDrawer() {
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
-            <AppBar position="fixed" open={open}>
+            <AppBar position="fixed" open={open} elevation={0}  sx={{ backgroundColor: '#1c1f2d' }}>
                 <Toolbar>
                     <IconButton
                         color="inherit"
@@ -166,20 +170,24 @@ export default function MiniDrawer() {
                     </Typography>
                 </Toolbar>
             </AppBar>
-            <Drawer variant="permanent" open={open}>
-                <DrawerHeader>
+            <Drawer variant="permanent" open={open}  PaperProps={{
+    sx: {
+      backgroundColor: "#1c1f2d"
+    }
+  }}>
+                <DrawerHeader >
                     <IconButton onClick={handleDrawerClose}>
                         {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
                     </IconButton>
                 </DrawerHeader>
                 <Divider />
                 
-                <List>
+                <List >
                     {itemsList.map((item, index) => {
                         const { text, icon, onClick } = item;
                         return (
                             <ListItem button key={text} onClick={onClick}>
-                                {icon && <ListItemIcon>{icon}</ListItemIcon>}
+                                {icon && <ListItemIcon style={{color:"white"}}>{icon}</ListItemIcon>}
                                 <ListItemText primary={text} />
                                 </ListItem>
                                 
@@ -197,7 +205,7 @@ export default function MiniDrawer() {
           ))}
         </List> */}
       </Drawer>
-            <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+            <Box component="main" sx={{ flexGrow: 1, p: 3,color:"white" }}>
                 <DrawerHeader />
 
             </Box>
