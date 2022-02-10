@@ -7,6 +7,7 @@ import Predictcard from '../../components/prediction/Predictcard'
 import { Row, Col } from "antd"
 import { TopTab } from "../../components/Top Tab/TopTab";
 import  {DropdownTable}  from "../../components/dropdown/DropdownTable";
+import { DealList } from "../../components/deal list/DealList";
 
 
 export const Trade = () => {
@@ -28,6 +29,7 @@ export const Trade = () => {
 
             <Col className="gutter-row" span={4}>
                 <Predictcard />
+                <DealList />
             </Col>
 
         </Row>

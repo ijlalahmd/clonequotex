@@ -19,12 +19,12 @@ export const DropdownTable = () => {
     if (!post) return null;
     console.log(post.quotes, "post");
     let open =state.dropDownOpen
-    const pushData = (item,i) => {
+    const pushData = (val,i) => {
         let array=state?.dataArray
-        let value = post.quotes[item]
+        let value = post.quotes[val]
         let obj ={
             i,
-            item,
+            val,
             value,
         }
         let newarr = [...array,obj];
@@ -50,7 +50,7 @@ export const DropdownTable = () => {
                         {Object.keys(post.quotes).map((val, key) => {
                             return (
                                 <tr key={key} onClick={() => pushData(val,key)}  >
-                                    <td>{val}</td>
+                                    <td>{[val.slice(0, 3), "/", val.slice(3)].join('')}</td>
                                     <td>{post.quotes[val]}</td>
                                     <td>{val.gender}</td>
                                     <td>{val.gesnder}</td>

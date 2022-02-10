@@ -13,6 +13,7 @@ function Cards() {
   // const [arr, setArr] = useState([state?.dataArray])
   const deleteCard = (i) => {
     console.log(dataArray.length, "click on checking length");
+    
     if (dataArray.length > 1) {
       let newArray = dataArray.filter(item => item.i !== i);
       dispatch({ type: "UPDATE_ARRAY", payload: newArray });

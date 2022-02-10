@@ -1,0 +1,221 @@
+.deal-list {
+    height: calc(100% - 385px);
+    border-radius: 4px;
+    background: #2b3040;
+    color: #fff;
+    -webkit-filter: drop-shadow(2px 2px 6px rgba(53,58,77,.03));
+    filter: drop-shadow(2px 2px 6px rgba(53,58,77,.03));
+}
+.deal-list__tab, .deal-list__tabs {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.deal-list__tab {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    padding: 12px 11px;
+    cursor: pointer;
+    background: var(--deal-list-tabs-bg);
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 700;
+    border-radius: 4px 4px 0 0;
+}
+.deal-list__tab.active {
+    width: 100%;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background: #2b3040;
+    border-top: 2px solid #2a99ff;
+    padding: 10px 11px 12px;
+}
+.deal-list__tab-count {
+    width: 18px;
+    height: 18px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-left: 8px;
+    font-size: 10px;
+    line-height: 12px;
+    font-weight: 900;
+    color:#ffffff;
+    background:#ffffff1a;
+    opacity: .75;
+    border-radius: 100px;
+}
+.deal-list__tab svg {
+    width: 16px;
+    height: 16px;
+    color: #fff;
+}
+.deal-list__items {
+    height: calc(100% - 60px);
+    padding: 0 6px;
+    margin-top: 14px;
+    overflow: auto;
+}
+.trades__placeholder {
+    display: block;
+    margin: 14px auto auto;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-animation: usermenuFadeIn .2s linear normal forwards running;
+    animation: usermenuFadeIn .2s linear normal forwards running;
+}
+.trades__placeholder svg {
+    display: inline-block;
+}
+
+.icon-trades-empty {
+    width: 50px;
+    height: 50px;
+}
+.trades__placeholder p, .trades__placeholder span {
+    display: block;
+    max-width: 180px;
+    margin: 12px auto;
+    color: #ffffff80;
+}
+
+.trades-list__date {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 0 auto 12px;
+    padding: 6px;
+    text-align: center;
+    background-color: rgba(53,58,77,.1);
+    border-radius: 12px;
+    font-size: 10px;
+    line-height: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    opacity: .5;
+}
+.trades-list__date span {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    min-width: 16px;
+    min-height: 16px;
+    margin: -2px 0 -2px 6px;
+    color: #353a4d;
+    background-color: #fff;
+    border-radius: 8px;
+}
+.trades-list-item:last-child {
+    margin-bottom: 14px;
+}
+
+.trades-list__item {
+    font-size: 12px;
+    line-height: 16px;
+}
+.trades-list-item__close {
+    opacity: .8;
+}
+.trades-list-item__title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-left: 19px;
+    position: relative;
+    color: var(--color-black);
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.trades-list-item__name {
+    font-weight: 700;
+    max-width: 43%;
+    white-space: nowrap;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+.trades-list-item__close .trades-list-item__countdown {
+    font-weight: 400;
+}
+
+.trades-list-item__countdown {
+    color: #fff;
+    margin-left: auto;
+    display: block;
+    font-weight: 700;
+}
+.trades-list-item__delta--up {
+    color:#0faf59;
+}
+
+.trades-list-item__delta {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-top: 8px;
+    font-weight: 700;
+    line-height: 14px;
+}
+.trades-list-item__delta svg {
+    margin-right: 6px;
+    height: 14px;
+    width: 14px;
+}
+.icon-arrow-up-circle, .icon-arrow-up-green {
+    width: 19px;
+    height: 18px;
+}
+.trades-list-item__close .trades-list-item__delta-right {
+    font-weight: 700;
+}
+
+.trades-list-item__delta-right {
+    margin-left: auto;
+    font-weight: 400;
+}
+.trades-list-item__delta--up {
+    color: #0faf59;
+}
+
+
+
