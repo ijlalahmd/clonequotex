@@ -1,0 +1,96 @@
+/* .page__sidebar>:first-child {
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+}
+.sidebar-section--dark {
+    color: #fff;
+    background-color: var(--sidebar-bg-section);
+    -webkit-box-shadow: 2px 2px 6px rgb(53 58 77 / 20%);
+    box-shadow: 2px 2px 6px rgb(53 58 77 / 20%);
+}
+.sidebar-section--large {
+    padding: 15px;
+    border-radius: 8px;
+}
+.sidebar-section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 6px;
+    margin-bottom: 10px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    min-height: 50px;
+    background-color: var(--trades-bg-color);
+    border-radius: 4px;
+    -webkit-box-shadow: 2px 2px 6px rgb(53 58 77 / 3%);
+    box-shadow: 2px 2px 6px rgb(53 58 77 / 3%);
+}
+.section-deal {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    position: relative;
+}
+.section-deal__header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 900;
+}
+.flags {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+}
+
+.section-deal__flags {
+    margin-right: 10px;
+    color: #353a4d;
+}
+.section-deal__name {
+    margin-right: auto;
+}
+.section-deal__percent {
+    color: hsla(0,0%,100%,.3);
+}
+.trading-chart__mobile-select {
+    display: none;
+}
+.flags {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+}
+
+.trading-chart__mobile-select__flags {
+    margin-right: 8px;
+    color: var(--color-white);
+}
+.trading-chart__mobile-select__flags svg {
+    width: 14px;
+    height: 14px;
+}
+.flags>* {
+    float: left;
+    width: 16px;
+    height: 16px;
+    background-color: currentColor;
+    -webkit-box-shadow: 0 0 0 2px currentColor;
+    box-shadow: 0 0 0 2px currentColor;
+    border-radius: 50%;
+} */
