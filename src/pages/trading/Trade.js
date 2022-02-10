@@ -8,7 +8,9 @@ import { Row, Col } from "antd"
 import { TopTab } from "../../components/Top Tab/TopTab";
 import  {DropdownTable}  from "../../components/dropdown/DropdownTable";
 import { DealList } from "../../components/deal list/DealList";
-
+import "./trade.css"
+import { PageBar } from "../../components/Pagebar/PageBar";
+import { PageSideBar } from "../../components/Side bar/PageSideBar";
 
 export const Trade = () => {
     return <div >
@@ -18,7 +20,7 @@ export const Trade = () => {
                 <Sidedrawer />
             </Col>
 
-            <Col className="gutter-row" span={19}>
+            <Col className="gutter-row graphMain" span={19}>
                 {/* <Dropbtn />
                 <Cards /> */}
                 <DropdownTable />
@@ -27,9 +29,11 @@ export const Trade = () => {
 
             </Col>
 
-            <Col className="gutter-row" span={4}>
-                <Predictcard />
-                <DealList />
+            <Col className="gutter-row pageBarMain" span={4}>
+                {/* <Predictcard /> */}
+                {/* <PageBar />
+                <DealList /> */}
+                <PageSideBar />
             </Col>
 
         </Row>

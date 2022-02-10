@@ -81,7 +81,7 @@ function Cards() {
                   </div>
                   <div className="tab__block">
                     <div className="tab__block-label">
-                      <div className="tab__label">{item.item}</div>
+                      <div className="tab__label">{item.val}</div>
                     </div>
                     <div className="tab__block-payout">
                       <div className="tab__payout">75%</div>

@@ -16,7 +16,7 @@ export default function App() {
       width: chartContainerRef.current.clientWidth,
       height: chartContainerRef.current.clientHeight,
       layout: {
-        backgroundColor: '#253248',
+        backgroundColor: '#1c1f2d',
         textColor: 'rgba(255, 255, 255, 0.9)',
       },
       grid: {
@@ -102,7 +102,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className="chartMaian">
       <div ref={chartContainerRef} className="chart-container" />
     </div>
   );
