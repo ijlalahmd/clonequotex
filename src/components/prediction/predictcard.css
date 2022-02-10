@@ -1,8 +1,11 @@
 .card {
-    background-color: gray;
+    background-color: white;
     margin-top: 10rem;
-
-    justify-content: center;
+    border-color: gray;
+    justify-content: center;    
+    /* background-color: grey; */
+    border-radius: 3rem;
+    border-top-color: grey;
     
 }
 
@@ -12,4 +15,78 @@
 
 .textfield1 {
     line-height: normal;
+}
+
+.depositbutton {
+    margin-bottom: 10%;
+}
+span.classtodisable {
+    color: #1976d2;
+}
+.abcclass.card-title.h5 {
+    color: white;
+    font-size: 18px;
+}
+
+fieldset.MuiOutlinedInput-notchedOutline.css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+}
+
+button.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.MuiButton-disableElevation.MuiButtonBase-root.css-zddlty-MuiButtonBase-root-MuiButton-root {
+    background-color: red;
+}
+span.classtodisable {
+    color: green;
+}
+
+button.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.MuiButton-disableElevation.MuiButtonBase-root.button.css-zddlty-MuiButtonBase-root-MuiButton-root {
+    padding-left: 47px;
+    padding-bottom: 10px;
+    background-color: green;
+}
+
+.buttondeposit {
+    background-color: #4CAF50;
+    border-radius: 0.25rem;
+    border: none;
+    /* display: inline-block; */
+    font-size: 16px;
+    padding: 15px 0px;
+    cursor: pointer;
+    width: 35%;
+    margin-right: 5px;
+}
+input[type='date'], input[type='time'], input[type='datetime-local'], input[type='month'] {
+    padding-left: 100px;
+}
+button, html [type="button"], [type="reset"], [type="submit"] {
+    -webkit-appearance: button;
+    padding: 10px 50px;
+}
+
+.buttonwithdrawal {
+    background-color: gray;
+    border-radius: 0.25rem;
+    border: none;
+    font-size: 16px;
+    padding: 15px 0px;
+    cursor: pointer;
+    width: 35%;
+    justify-content: center;
+}
+
+.plusicon1{
+    color: gray;
+}
+
+.card-body {
+    border: solid;
+    border-radius: 1rem;
+    border-color: #2b3040;
+    background-color: #2b3040;
+}
+
+.payoutspan {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
 }
