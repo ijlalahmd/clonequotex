@@ -13,6 +13,20 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import { GlobalContext } from "../Context/context"
 function Predictcard() {
+  const Marker = () => { 
+    // let timer = (Math.round(new Date().getTime() / 1000) - 0);
+    // var markers = [
+    //   {
+    //     time: timer,
+    //     position: 'inBar',
+    //     color: 'green',
+    //     shape: 'circle',
+    //   },
+    // ];
+    // lineSeries.setMarkers(markers);
+   }
+  
+ 
   const { state, dispatch } = useContext(GlobalContext);
   let currency2 = (state.dataArray.length !== 0 ? state.dataArray.slice(-1).map((item) => {
     var a = item.item
@@ -41,7 +55,7 @@ function Predictcard() {
 
           />
           <br />
-          <Button className="button" variant="contained" color="primary" disableElevation>
+          <Button className="button" onClick={Marker} variant="contained" color="primary" disableElevation>
             Up
           </Button>
           <br />

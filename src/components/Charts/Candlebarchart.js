@@ -50,6 +50,16 @@ export default function App() {
     });
 
     candleSeries.setData(priceData);
+    let timer = (Math.round(new Date().getTime() / 1000) - 0);
+  var markers = [
+    {
+      time: timer,
+      position: 'inBar',
+      color: 'green',
+      shape: 'circle',
+    },
+  ];
+  candleSeries.setMarkers(markers);
 
     // const areaSeries = chart.current.addAreaSeries({
     //   topColor: 'rgba(38,198,218, 0.56)',
@@ -75,7 +85,7 @@ export default function App() {
 
     volumeSeries.setData(volumeData);
   }, []);
-
+  
   // Resize chart on container resizes.
   useEffect(() => {
     resizeObserver.current = new ResizeObserver(entries => {
