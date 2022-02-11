@@ -1,7 +1,9 @@
 import React, { useEffect, useState, useContext } from 'react'
 import "./DropdownTable.css"
 import Axios from "axios";
-import {ArrowUpward } from '@material-ui/icons'
+import { ArrowUpward } from '@material-ui/icons'
+import StarBorderIcon from '@mui/icons-material/StarBorder';
+import Flag from 'react-world-flags'
 
 import { GlobalContext } from "../Context/context"
 
@@ -36,7 +38,55 @@ export const DropdownTable = () => {
     }
     return (
         <>
-            {
+        {
+            open?(
+                <div  className={`tableMain ${open?"assetSelectFadeIn":"assetSelectFadeOut"}`}>
+                <div className="tableMainHeader"></div>
+                <div className="TableCont">
+                    <div className="tableHeader allFlex">
+                        <div className="headerItem1"><a>Asset</a></div>
+                        <div className="headerItem2">
+                            <a>24h changing</a>
+                        </div>
+                        <div className="headerItem3">
+                            <a>Rev. from 1 min</a>
+                        </div>
+                        <div className="headerItem4">
+                            <a>from 5 min</a>
+                        </div>
+                    </div>
+                    {Object.keys(post.quotes).map((val, key) => {
+                        return (
+                            <div className="table_item allFlex"  key={key} onClick={() => pushData(val, key)}>
+                                <div className="table__name allFlex">
+                                    <div className="table__flags">
+                                        <Flag code="us" fallback={<span></span>} className="table__flag" height={14} width={14} />
+                                        <Flag code="us" fallback={<span></span>} className="table__flag" height={14} width={14} />
+                                    </div>
+                                    <span>{[val.slice(0, 3), "/", val.slice(3)].join('')}</span>
+                                </div>
+                                <div className="assets-table__change allFlex">
+                                    <ArrowUpward className='icon-ArrowUp' />
+                                    <span>{`${0.77+key}%`}</span>
+                                </div>
+                                <div className="assets-table_percent1">
+                                    <span>{`${60+key}%`}</span>
+                                </div>
+                                <div className="assets-table_percent2 allFlex">
+                                    <span>63%</span>
+                                    <StarBorderIcon className='icon-favorite' />
+                                </div>
+
+                            </div>
+                        )
+                    })}
+
+                </div>
+            </div>
+            ):null
+        }
+          
+            {/* {
                 open && (
                     <div className="table_cont">
                         <div className="table_wrapper">
@@ -62,7 +112,7 @@ export const DropdownTable = () => {
                         </div>
                     </div>
                 )
-            }
+            } */}
 
         </>
 
