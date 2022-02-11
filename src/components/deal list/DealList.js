@@ -1,15 +1,30 @@
-import React from 'react'
+import React,{useState,useRef} from 'react'
 import { DownArrow } from '../../Asset/svg/Downsvg'
 import "./DealList.css"
 export const DealList = () => {
+  
+    const [active1, setactive1] = useState("active")
+    const [active2, setactive2] = useState("")
+    const  Toggele= (n) => { 
+        
+        if(n =="1"){
+           setactive1("active")
+           setactive2("")
+        }else{
+            setactive2("active")
+            setactive1("")
+        }
+
+
+     }
     return (
         <div className="deal-list ">
             <div className="deal-list__tabs">
-                <div className="deal-list__tab  active">
+                <div className={`deal-list__tab  ${active1}`} onClick={() => { Toggele("1") }}>
                     <div>Trades</div>
                     <div className="deal-list__tab-count">0</div>
                 </div>
-                <div className="deal-list__tab ">
+                <div className={`deal-list__tab  ${active2}`}  onClick={() => { Toggele("2") }}> 
                     <svg className="icon-deal-list-orders">
                         <use xlinkHref="#spritemap_icon-deal-list-orders" />
                     </svg>

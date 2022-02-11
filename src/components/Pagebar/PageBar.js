@@ -1,8 +1,25 @@
 import { Button } from '@material-ui/core'
 import { ArrowDownward, ArrowUpward } from '@material-ui/icons'
-import React from 'react'
+import React, { useState } from 'react'
 import "./PageBar.css"
-export const PageBar = ({title}) => {
+export const PageBar = ({ title }) => {
+  const [investment, setInvesment] = React.useState(1000)
+  var Percentage=75
+  let A =Math.round(((investment*Percentage)/100))
+  const [Payout, setPayout] = React.useState(A+investment)
+  
+  const MinusFunc = () => {
+    setInvesment(investment-1)
+    let cal=((investment*Percentage)/100)
+    let newPay=Math.round(investment +cal)
+   setPayout(newPay)
+  }
+  const PlusFunc = () => {
+     setInvesment(investment+1)
+     let cal=((investment*Percentage)/100)
+     let newPay=Math.round(investment +cal)
+    setPayout(newPay)
+   }
   return (
     <div className="pageBarCont">
       <div className="header flexAllCenter">
@@ -11,7 +28,7 @@ export const PageBar = ({title}) => {
         </div>
         <div className="title">
 
-         {title}
+          {title ? [title.slice(0, 3)].join('') : "null"}
 
         </div>
         <div className="percantage">
@@ -21,17 +38,17 @@ export const PageBar = ({title}) => {
       <div className="inputCont">
         <div className="timeBtn btn ">
           <label htmlFor="time" className='flexAllCenter inputLabelCont'>
-            <span class="input-label">Time</span>
+            <span className="input-label">Time</span>
 
-            <div className="Minus">
-              <button>
+            <div className="Minus" >
+              <button >
                 -
               </button>
             </div>
             <input
               type="text"
               className='inputVal timeInput'
-              placeholder='18:19:00'
+             value='18:19:00'
             />
             <div className="plus">
               <button>
@@ -42,20 +59,20 @@ export const PageBar = ({title}) => {
         </div>
         <div className="invesBtn btn">
           <label htmlFor="invs" className='flexAllCenter inputLabelCont'>
-            <span class="input-label">Investment</span>
+            <span className="input-label">Investment</span>
 
             <div className="Minus">
-              <button>
+              <button onClick={MinusFunc}>
                 -
               </button>
             </div>
             <input type="text"
-              placeholder='1000$'
+              value={investment}
               className='inputVal invsInput'
               id='invs'
             />
             <div className="plus">
-              <button>
+              <button onClick={PlusFunc}>
                 +
               </button>
             </div>
@@ -64,16 +81,16 @@ export const PageBar = ({title}) => {
 
       </div>
       <div className="payoutCont">
-        <div className="upBtn dealBtnCont">
-          <Button className="dealButton" variant="contained" color="success" startIcon={<ArrowUpward /> }disableElevation>
+        <div className="dealBtnCont">
+          <Button className="dealButton upBtn" variant="contained" endIcon={<ArrowUpward className='Ar' />} disableElevation>
             Up
           </Button>
         </div>
         <div className="payoutAmout">
-          your payout : <span className="amount"><b>1550.00</b></span>
+          your payout : <span className="amount"><b>{`${Payout} $`}</b></span>
         </div>
-        <div className="downBtn dealBtnCont">
-          <Button className="dealButton" variant="contained" color="primary" endIcon={<ArrowDownward />} disableElevation>
+        <div className="dealBtnCont">
+          <Button className="dealButton downBtn" variant="contained" color="error" endIcon={<ArrowDownward className='Ar' />} disableElevation>
             down
           </Button>
         </div>

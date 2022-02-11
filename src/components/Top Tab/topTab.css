@@ -67,5 +67,5 @@
     transform: rotate(0);
 }
 .selectCloseBTn{
-    transform: rotate(45deg);
+    transform: rotate(-45deg);
 }

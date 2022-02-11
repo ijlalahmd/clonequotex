@@ -1,6 +1,7 @@
 
 html,body{
   background-color: #1c1f2d !important;
+  font: 400 14px/18px Roboto,Arial,Helvetica,sans-serif;
 }
 .App {
   text-align: center;

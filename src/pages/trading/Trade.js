@@ -3,7 +3,6 @@ import Cards from "../../components/Cards/Cards";
 import Candlebarchart from '../../components/Charts/Candlebarchart'
 import Dropbtn from "../../components/dropdown/Dropbtn";
 import Sidedrawer from '../../components/sidedrawerleft/Sidedrawer'
-import Predictcard from '../../components/prediction/Predictcard'
 import { Row, Col } from "antd"
 import { TopTab } from "../../components/Top Tab/TopTab";
 import  {DropdownTable}  from "../../components/dropdown/DropdownTable";
