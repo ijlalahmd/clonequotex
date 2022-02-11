@@ -20,7 +20,7 @@
     width: max-content;
     padding: 12px 11px;
     cursor: pointer;
-    background: var(--deal-list-tabs-bg);
+    background: #303440;
     font-size: 12px;
     line-height: 16px;
     font-weight: 700;
@@ -216,6 +216,9 @@
 .trades-list-item__delta--up {
     color: #0faf59;
 }
-
+.trades-list-item__flags {
+    margin-right: 6px;
+    color: #4d5363;;
+}
 
 

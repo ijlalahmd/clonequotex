@@ -3,6 +3,7 @@ import { DealList } from '../deal list/DealList'
 import { PageBar } from '../Pagebar/PageBar'
 import "./PageSideBar.css"
 import { GlobalContext } from "../Context/context"
+import { SideBarTopBtn } from '../sidebarTopBtn/SideBarTopBtn'
 
 export const PageSideBar = () => {
   const { state, dispatch } = useContext(GlobalContext);
@@ -13,6 +14,7 @@ export const PageSideBar = () => {
   }) : null)
   return (
     <div className='PageSideBar'>
+      <SideBarTopBtn />
     <PageBar title={currency2} />
     <DealList title={currency2}/>
     </div>

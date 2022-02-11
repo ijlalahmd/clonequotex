@@ -18,7 +18,7 @@ export const TopTab = () => {
             <div className="asset-select" onClick={handleChange}>
                 <button className="asset-select__button">
                   
-                        <CloseOutlined sx={{ fontSize: 30 }}  className={state.dropDownOpen ? "selectBTn" : "selectCloseBTn"} />
+                        <CloseOutlined sx={{ fontSize: 20 }}  className={state.dropDownOpen ? "selectBTn" : "selectCloseBTn"} />
                 </button>
                 <div />
             </div>

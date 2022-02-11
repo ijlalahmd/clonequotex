@@ -170,9 +170,10 @@ export default function MiniDrawer() {
                     </Typography>
                 </Toolbar>
             </AppBar>
-            <Drawer variant="permanent" open={open}  PaperProps={{
+            <Drawer variant="permanent"  open={open}  PaperProps={{
     sx: {
-      backgroundColor: "#1c1f2d"
+      backgroundColor: "#1c1f2d",
+      border:"none"
     }
   }}>
                 <DrawerHeader >

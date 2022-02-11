@@ -1,4 +1,12 @@
-.pageBarMain,.graphMain{
+.graphMain{
     background-color: #1c1f2d;
     margin-top: 70px;
+}
+.pageBarMain{
+    background-color: #1c1f2d;
+    margin-top: 10px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 10000;
 }
