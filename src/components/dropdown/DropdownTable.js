@@ -60,8 +60,8 @@ export const DropdownTable = () => {
                             <div className="table_item allFlex"  key={key} onClick={() => pushData(val, key)}>
                                 <div className="table__name allFlex">
                                     <div className="table__flags">
-                                        <Flag code="us" fallback={<span></span>} className="table__flag" height={14} width={14} />
-                                        <Flag code="us" fallback={<span></span>} className="table__flag" height={14} width={14} />
+                                        <Flag code={val.slice(0, 2)} fallback={<span></span>} className="table__flag" height={14} width={14} />
+                                        <Flag code={val.slice(4,6)} fallback={<span></span>} className="table__flag" height={14} width={14} />
                                     </div>
                                     <span>{[val.slice(0, 3), "/", val.slice(3)].join('')}</span>
                                 </div>

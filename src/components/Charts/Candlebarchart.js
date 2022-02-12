@@ -5,6 +5,8 @@ import { priceData } from './priceData';
 // import { areaData } from './areaData';
 import { volumeData } from './volumeData';
 import './styles.css';
+import { BarLeft } from '../tradind left bar/BarLeft';
+import { ChartSetting } from '../Tradung card Setting/ChartSetting';
 
 export default function App() {
   const chartContainerRef = useRef();
@@ -87,22 +89,24 @@ export default function App() {
   }, []);
   
   // Resize chart on container resizes.
-  // useEffect(() => {
-  //   resizeObserver.current = new ResizeObserver(entries => {
-  //     const { width, height } = entries[0].contentRect;
-  //     chart.current.applyOptions({ width, height });
-  //     setTimeout(() => {
-  //       chart.current.timeScale().fitContent();
-  //     }, 0);
-  //   });
+  useEffect(() => {
+    resizeObserver.current = new ResizeObserver(entries => {
+      const { width, height } = entries[0].contentRect;
+      chart.current.applyOptions({ width, height });
+      setTimeout(() => {
+        chart.current.timeScale().fitContent();
+      }, 0);
+    });
 
-  //   resizeObserver.current.observe(chartContainerRef.current);
+    resizeObserver.current.observe(chartContainerRef.current);
 
-  //   return ( ) => resizeObserver.current.disconnect();
-  // }, []);
+    return ( ) => resizeObserver.current.disconnect();
+  }, []);
 
   return (
     <div className="chartMaian">
+      <BarLeft />
+      <ChartSetting />
       <div ref={chartContainerRef} className="chart-container" />
     </div>
   );

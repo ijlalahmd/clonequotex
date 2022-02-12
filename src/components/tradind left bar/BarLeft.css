@@ -1,0 +1,61 @@
+.trading-chart__left {
+    position: absolute;
+    z-index: 10000000;
+    top: 45px;
+    left: 9px;
+    bottom: 0;
+    min-width: 40px;
+    pointer-events: none;
+    color: white;
+}
+.market-depth-vertical {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    position: relative;
+    width: 40px;
+    height: 100%;
+    padding: 21px 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.market-depth-vertical__ask-value {
+    top: 4px;
+}
+
+.market-depth-vertical__ask-value, .market-depth-vertical__bid-value {
+    position: absolute;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 900;
+}
+.market-depth-vertical__ask, .market-depth-vertical__bid {
+    width: 4px;
+    height: 50%;
+    border-radius: 2px;
+    -webkit-transition: height .35s ease;
+    -o-transition: height .35s ease;
+    transition: height .35s ease;
+}
+.market-depth-vertical__ask {
+    background-color: #ff6251;
+}
+.market-depth-vertical__bid-value {
+    bottom: 4px;
+}
+.market-depth-vertical__bid {
+    background-color: #0faf59;
+    margin-top: 4px;
+}

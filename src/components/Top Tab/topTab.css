@@ -10,9 +10,9 @@
     pointer-events: none;
     position:absolute;
     top: -12px;
-    left: 16px;
+    left: 12px;
     width: 100%;
-    z-index: 9;
+    z-index: 1000000;
 }
 .asset-select {
     position: relative;
