@@ -1,7 +1,7 @@
 .trading-chart-settings {
     position: absolute;
     bottom: 20px;
-    left: 60px;
+    left: 70px;
     z-index: 5;
 }
 .trading-chart-settings__item {
@@ -119,4 +119,60 @@
     -webkit-transition: all .3s linear;
     -o-transition: all .3s linear;
     transition: all .3s linear;
+}
+.popover-select__settings-time {
+    display: grid;
+    grid-template-columns: repeat(4,44px);
+    grid-template-rows: repeat(4,28px);
+    grid-column-gap: 6px;
+    grid-row-gap: 6px;
+}
+.popover-select__settings {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    padding: 10px 12px;
+    margin: 0;
+    color: #fff;
+    background-color:#1c1f2d;
+    -webkit-box-shadow: 2px 2px 6px rgba(28,32,46,.2);
+    box-shadow: 2px 2px 6px rgba(28,32,46,.2);
+    border-radius: 2px;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+    opacity: 1;
+    z-index: 9;
+    -webkit-transform: translate(calc(100% + 6px),-50%);
+    -ms-transform: translate(calc(100% + 6px),-50%);
+    transform: translate(calc(100% + 6px),-50%);
+    pointer-events: all;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+}
+.popover-select__settings-time-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    fill: #fff;
+    -webkit-transition: all .13333333s linear;
+    -o-transition: all .13333333s linear;
+    transition: all .13333333s linear;
+}
+.popover-select__settings-time-item:hover {
+    background-color: hsla(0,0%,100%,.1);
+    border-radius: 2px;
 }
