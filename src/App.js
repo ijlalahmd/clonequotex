@@ -10,6 +10,7 @@ import Market from './pages/markets/Market'
 import Trades from './pages/trades/Trades'
 import Withdrawal from './pages/withdrawal/Withdrawal'
 import Balance from './pages/balance/Balance';
+import Homepage from './pages/homepage/Homepage'
 import 'antd/dist/antd.css'; 
 
 
@@ -18,7 +19,7 @@ function App() {
     <div className="App">
     <BrowserRouter>
      <Routes>
-       <Route exact path="/" element={<Landingpage/>} />
+       <Route exact path="/" element={<Homepage/>} />
        <Route exact path="/trade" element={<Trade/>} />
        <Route exact path="/Account" element={<Account/>} />
        <Route exact path="/deposit" element={<Deposit/>} />
@@ -27,7 +28,7 @@ function App() {
        <Route exact path="/Withdrawal" element={<Withdrawal/>}/>
        <Route exact path="/Balance" element={<Balance/>}/>
        {/* <Route exact path="/Account" element={<Account/>}  */}
-       {/* <Route exact path="" element={}/> */}
+       <Route exact path="/Landingpage" element={<Landingpage/>}/>
 
       </Routes>
       </BrowserRouter>

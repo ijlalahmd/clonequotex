@@ -1,0 +1,31 @@
+
+.image1{
+    width: 100%;
+}
+
+.demobutton {
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: none;
+  /* color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center; */
+}
+
+.demobtn1 {
+    margin-left: 10px;
+    width: 90%;
+    /* height: 100%; */
+}
+
+.demobtn2 {
+    margin-left: 20px;
+    width: 90%;
+}
