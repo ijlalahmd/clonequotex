@@ -5,6 +5,7 @@ import "./cards.css";
 import ArrowDownwardSharpIcon from '@material-ui/icons/ArrowDownwardSharp';
 //import { Modal, Table, Button, } from "react-bootstrap"
 import { GlobalContext } from "../Context/context"
+import Flag from 'react-world-flags'
 
 function Cards() {
   const { state, dispatch } = useContext(GlobalContext);
@@ -13,6 +14,7 @@ function Cards() {
   // const [arr, setArr] = useState([state?.dataArray])
   const deleteCard = (i) => {
     console.log(dataArray.length, "click on checking length");
+    
     if (dataArray.length > 1) {
       let newArray = dataArray.filter(item => item.i !== i);
       dispatch({ type: "UPDATE_ARRAY", payload: newArray });
@@ -25,6 +27,7 @@ function Cards() {
     <div className="tabs">
       {
         dataArray.map((item, i) => {
+          console.log([item.val.slice(0, 3), "/", item.val.slice(3)].join(''),"item.val");
           return (
             <div className="tabs__items">
               <div className="tab desktop" >
@@ -71,16 +74,20 @@ function Cards() {
 
                   </div>
                   <div className="tab__flags">
-                    <svg className="tab__flag flag-aud">
+                    {/* <svg className="tab__flag flag-aud">
                       <use xlinkHref="#flags_flag-aud" />
-                    </svg>
-                    <svg className="tab__flag flag-cad">
+                    </svg> */}
+                    
+                    <Flag code="us" fallback={ <span></span> } className="tab__flag" height={14} width={14}/>
+                    {/* <svg className="tab__flag flag-cad">
                       <use xlinkHref="#flags_flag-cad" />
-                    </svg>
+                    </svg> */}
+                    <Flag code="pa" fallback={ <span></span> } className="tab__flag"  height={14} width={14}/>
+
                   </div>
                   <div className="tab__block">
                     <div className="tab__block-label">
-                      <div className="tab__label">{item.item}</div>
+                      <div className="tab__label">{[item.val.slice(0, 3), "/", item.val.slice(3)].join('')}</div>
                     </div>
                     <div className="tab__block-payout">
                       <div className="tab__payout">75%</div>

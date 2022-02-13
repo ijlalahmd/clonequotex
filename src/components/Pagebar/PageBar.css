@@ -1,0 +1,176 @@
+
+.flexAllCenter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header{
+
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 900;
+}
+.title{
+    color: white;
+    margin-right: auto;
+}
+.percantage {
+    color: hsla(0,0%,100%,.3);
+}
+.pageBarCont{
+    background-color: #2b3040;
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px
+}
+.btn{
+    margin: 14px 10px 0;
+}
+.inputLabelCont{
+    position: relative;
+    padding: 11px;
+    margin-top: 7px;
+    border-radius: 4px;
+    transition: all .13333333s linear;
+    border: 1px solid hsla(0,0%,100%,.3);
+
+}
+.input-label{
+    display: block;
+    padding: 0 4px;
+    position: absolute;
+    left: 10px;
+    top: -10px;
+    color:  hsla(0,0%,100%,.3);
+    background-color: #2b3040;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: left;
+   
+
+}
+.invesBtn{
+    padding-top: 1px;
+}
+.inputVal{
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    padding: 2px 4px;
+    margin: 0 6px;
+    width: 50px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    line-height: 20px;
+}
+.Minus button{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    color: #fff;
+    background-color: #676b79;
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: inherit;
+    -o-transition: inherit;
+    transition: inherit;
+    font-size: 16px;
+    line-height: 20px;
+    cursor: pointer;
+    
+}
+.plus button{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    color: #fff;
+    background-color: #676b79;
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: inherit;
+    -o-transition: inherit;
+    transition: inherit;
+    font-size: 16px;
+    line-height: 20px;
+    cursor: pointer;
+}
+.payoutCont{
+    margin: 10px;
+}
+.dealButton{
+    color: white !important;
+    width: 100%;
+    padding: 12px 20px !important;
+    border-radius: 4px !important;
+    border: none !important;
+    font-size: 16px !important;
+    line-height: 20px !important;
+    font-weight: 700 !important;
+    text-decoration: none;
+    white-space: nowrap;
+    user-select: none;
+    -webkit-transition: all .2s linear;
+    -o-transition: all .2s linear;
+    transition: all .2s linear;
+    -webkit-transition-property: color,background-color;
+    -o-transition-property: color,background-color;
+    transition-property: color,background-color;
+    background-color: rgb(255 255 255 /10%);
+    justify-content: space-between !important;
+}
+.upBtn{
+    background-color: #0faf59 !important; 
+    -webkit-box-shadow: 0 4px 10px rgb(53 183 113 / 25%) !important;
+    box-shadow: 0 4px 10px rgb(53 183 113 / 25%) !important;
+}
+.upBtn:hover {
+    background-color: #05c65e !important;
+    -webkit-box-shadow: 0 4px 10px rgba(5,198,94,.3) !important;
+    box-shadow: 0 4px 10px rgba(5,198,94,.3) !important;
+}
+.downBtn{
+    background-color: #ff6251 !important;
+    -webkit-box-shadow: 0 4px 10px rgb(255 101 84 / 25%) !important;
+    box-shadow: 0 4px 10px rgb(255 101 84 / 25%) !important;
+
+}
+.downBtn:hover {
+    background-color: #ff402b !important;
+    -webkit-box-shadow: 0 4px 10px rgba(255,64,43,.25);
+    box-shadow: 0 4px 10px rgba(255,64,43,.25);
+}
+.payoutAmout {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 13px;
+    line-height: 18px;
+    text-align: center;
+}
+input { 
+    color: white !important;
+    opacity: 1; /* Firefox */
+}
+.Ar{
+      background-color: rgba(255, 255, 255, 0.575);
+      border-radius: 50%;
+      padding: 3px;
+}
+
