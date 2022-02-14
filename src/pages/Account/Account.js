@@ -13,7 +13,7 @@ import { useNavigate } from 'react-router-dom';
 export default function ButtonSizes() {
     const navigate = useNavigate();
     return (
-        <Box className='button' sx={{ '& button': { m: 1 } }}>
+        <Box className='buttonAcount' sx={{ '& button': { m: 1 } }}>
         <div>
         <Sidedrawer/>
 

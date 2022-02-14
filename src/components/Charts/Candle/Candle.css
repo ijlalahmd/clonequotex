@@ -1,0 +1,12 @@
+
+.chartMaian {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 90vh;
+}
+.chart-container {
+  flex: 1;
+  height: 100%;
+}

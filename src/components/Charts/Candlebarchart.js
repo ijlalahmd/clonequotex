@@ -5,6 +5,8 @@ import { priceData } from './priceData';
 // import { areaData } from './areaData';
 import { volumeData } from './volumeData';
 import './styles.css';
+import { BarLeft } from '../tradind left bar/BarLeft';
+import { ChartSetting } from '../Tradung card Setting/ChartSetting';
 
 export default function App() {
   const chartContainerRef = useRef();
@@ -16,7 +18,7 @@ export default function App() {
       width: chartContainerRef.current.clientWidth,
       height: chartContainerRef.current.clientHeight,
       layout: {
-        backgroundColor: '#253248',
+        backgroundColor: '#1c1f2d',
         textColor: 'rgba(255, 255, 255, 0.9)',
       },
       grid: {
@@ -50,6 +52,16 @@ export default function App() {
     });
 
     candleSeries.setData(priceData);
+    let timer = (Math.round(new Date().getTime() / 1000) - 0);
+  var markers = [
+    {
+      time: timer,
+      position: 'inBar',
+      color: 'green',
+      shape: 'circle',
+    },
+  ];
+  candleSeries.setMarkers(markers);
 
     // const areaSeries = chart.current.addAreaSeries({
     //   topColor: 'rgba(38,198,218, 0.56)',
@@ -75,7 +87,7 @@ export default function App() {
 
     volumeSeries.setData(volumeData);
   }, []);
-
+  
   // Resize chart on container resizes.
   useEffect(() => {
     resizeObserver.current = new ResizeObserver(entries => {
@@ -92,7 +104,9 @@ export default function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className="chartMaian">
+      <BarLeft />
+      <ChartSetting />
       <div ref={chartContainerRef} className="chart-container" />
     </div>
   );
