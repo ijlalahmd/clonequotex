@@ -12,10 +12,11 @@ export default function Dropbtn () {
 
     React.useEffect(() => {
         Axios.get(baseURL).then((response) => {
-            console.log(response)
+            // console.log(response)
           setPost(response.data);
         });
       }, []);
+      
       
 
       if (!post) return null;

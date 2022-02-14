@@ -56,6 +56,7 @@ export default function Candlebarchart() {
     });
 
     candleSeries.setData(data);
+    console.log("chart.current.time",chart.current.time);
     var lastClose = data[data.length - 1].close;
     var lastIndex = data.length - 1;
 

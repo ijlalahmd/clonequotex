@@ -16,7 +16,7 @@ export const PageSideBar = () => {
     <div className='PageSideBar'>
       <SideBarTopBtn />
     <PageBar title={currency2} />
-    <DealList title={currency2}/>
+    <DealList title={currency2} state={state}/>
     </div>
   )
 }

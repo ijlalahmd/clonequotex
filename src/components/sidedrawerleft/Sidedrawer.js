@@ -166,7 +166,15 @@ export default function MiniDrawer() {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" noWrap component="div">
-                        Quotex
+                     
+                       <IconButton
+                        color="inherit"
+                        aria-label="open drawer"
+                        edge="start"
+                    >
+                        <MenuIcon />
+                        
+                    </IconButton>
                     </Typography>
                 </Toolbar>
             </AppBar>

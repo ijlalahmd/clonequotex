@@ -1,8 +1,12 @@
 import { Button } from '@material-ui/core'
 import { ArrowDownward, ArrowUpward } from '@material-ui/icons'
-import React, { useState } from 'react'
+import React, { useState ,useContext} from 'react'
 import "./PageBar.css"
-export const PageBar = ({ title }) => {
+import { GlobalContext } from "../Context/context"
+
+export const  PageBar = ({ title }) => {
+  const { state, dispatch } = useContext(GlobalContext);
+
   const [investment, setInvesment] = React.useState(1000)
   var Percentage=75
   let A =Math.round(((investment*Percentage)/100))
@@ -20,6 +24,12 @@ export const PageBar = ({ title }) => {
      let newPay=Math.round(investment +cal)
     setPayout(newPay)
    }
+   const UpTrade = () => { 
+     let oldTrade=state.Trade;
+     oldTrade.push("click")
+     dispatch({ type: "UP_TRADE", payload: oldTrade });
+
+    }
   return (
     <div className="pageBarCont">
       <div className="header flexAllCenter">
@@ -81,7 +91,7 @@ export const PageBar = ({ title }) => {
 
       </div>
       <div className="payoutCont">
-        <div className="dealBtnCont">
+        <div className="dealBtnCont" onClick={UpTrade}>
           <Button className="dealButton upBtn" variant="contained" endIcon={<ArrowUpward className='Ar' />} disableElevation>
             Up
           </Button>
