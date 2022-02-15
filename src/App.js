@@ -2,7 +2,7 @@
 
 
 
-import React, { useEffect} from "react";
+import React, { useEffect, useContext } from "react";
 import './App.css';
 //import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
@@ -16,38 +16,59 @@ import Trades from './pages/trades/Trades'
 import Withdrawal from './pages/withdrawal/Withdrawal'
 import Balance from './pages/balance/Balance';
 import Homepage from './pages/homepage/Homepage'
-import 'antd/dist/antd.css'; 
+import 'antd/dist/antd.css';
 import Axios from "axios";
 
 
+import { GlobalContext } from "../src/components/Context/context"
 
 function App() {
-  React.useEffect(() => {
-    const api1 = 'https://currencydatafeed.com/api/data.php?currency=EUR/USD+USD/JPY+EUR/NOK+AUD/USD+USD/SGD+USD/MXN+XAU/USD+GBP/CAD&token=us0bqmdc9s35b6yn5imx'; 
-    const api2 = 'https://currencydatafeed.com/api/historical.php?token=us0bqmdc9s35b6yn5imxcy=EUR/USD+EUR/GBP&date=2018-11-20'; 
-    const api3 = 'https://currencydatafeed.com/api/timeframe.php?currency=EUR/USD&from=2018-04-18&to=2021-01-10&token=us0bqmdc9s35b6yn5imx'; 
+  const { state, dispatch } = useContext(GlobalContext);
 
-    let token="us0bqmdc9s35b6yn5imx"
+  React.useEffect(() => {
+    const api3 = 'https://currencydatafeed.com/api/timeframe.php?currency=EUR/USD&from=2018-04-18&to=2021-01-10&token=us0bqmdc9s35b6yn5imx';
+
     Axios.get(api3).then((response) => {
-      console.log(response,"cheacking api  using axois")
-  });
+      let apidata = response.data.currency.data
+      //  apidata.map((item)=>{
+      //    return (
+      //       console.log("ass",Number(item.open))
+      //      )})
+      apidata.map((item) => { return { time: item.date, open:+item.open, high:+item.high, low:+item.low, close:+item.close } });
+      const newArrayOfObj = apidata.map(({
+        date: time,
+      ...rest
+      }) => ({
+       ...rest,
+        time
+      }));
+      dispatch({ type: "UPDATE_CANDLE_DATA", payload: newArrayOfObj });
+      newArrayOfObj.map((item) => {
+        return (
+          console.log("ass type of ", typeof (item.open))
+        )
+      })
+      console.log(newArrayOfObj, "aaaaa");
+
+
+    });
   }, []);
   return (
     <div className="App">
-    <BrowserRouter>
-     <Routes>
-       <Route exact path="/" element={<Homepage/>} />
-       <Route exact path="/trade" element={<Trade/>} />
-       <Route exact path="/Account" element={<Account/>} />
-       <Route exact path="/deposit" element={<Deposit/>} />
-       <Route exact path="/Market" element={<Market/>}/>
-       <Route exact path="/Trades" element={<Trades/>}/>
-       <Route exact path="/Withdrawal" element={<Withdrawal/>}/>
-       <Route exact path="/Balance" element={<Balance/>}/>
-       {/* <Route exact path="/Account" element={<Account/>}  */}
-       <Route exact path="/Landingpage" element={<Landingpage/>}/>
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/" element={<Homepage />} />
+          <Route exact path="/trade" element={<Trade />} />
+          <Route exact path="/Account" element={<Account />} />
+          <Route exact path="/deposit" element={<Deposit />} />
+          <Route exact path="/Market" element={<Market />} />
+          <Route exact path="/Trades" element={<Trades />} />
+          <Route exact path="/Withdrawal" element={<Withdrawal />} />
+          <Route exact path="/Balance" element={<Balance />} />
+          {/* <Route exact path="/Account" element={<Account/>}  */}
+          <Route exact path="/Landingpage" element={<Landingpage />} />
 
-      </Routes>
+        </Routes>
       </BrowserRouter>
     </div>
   );
