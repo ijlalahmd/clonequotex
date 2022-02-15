@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState,useContext } from 'react';
 import ReactDOM from 'react-dom';
 import { createChart, CrosshairMode } from 'lightweight-charts';
 import { priceData as data } from '../Data/priceData';
@@ -9,37 +9,18 @@ import { BarLeft } from '../../tradind left bar/BarLeft';
 import { ChartSetting } from '../../Tradung card Setting/ChartSetting';
 import { RealTimeButton } from '../../RealTimeButton/RealTimeButton';
 import Axios from "axios";
+import { GlobalContext } from "../../Context/context"
 
 
-export default function Candlebarchart({CandleData}) {
-  console.log(CandleData,"CandleData");
-  const [Data, setData] = useState([])
-  // React.useEffect(() => {
-  //   const api3 = 'https://currencydatafeed.com/api/timeframe.php?currency=EUR/USD&from=2018-04-18&to=2021-01-10&token=us0bqmdc9s35b6yn5imx';
-
-  //   Axios.get(api3).then((response) => {
-  //     let apidata = response.data.currency.data
-  //     // apidata.map((item) => { return (console.log(item.date)) })
-  //     apidata.map((item) => {return{ time: item.date,...item}});
-  //     const newArrayOfObj = apidata.map(({
-  //       date: time,
-  //       ...rest
-  //     }) => ({
-  //       ...rest,
-  //       time
-  //     }));
-      
-  //     setData(newArrayOfObj)
-  //     console.log(newArrayOfObj,"aaaaa");
-
-
-  //   });
-  // }, []);
+export default function Candlebarchart() {
+ 
+  const { state, dispatch } = useContext(GlobalContext);
+  let CandleData = state.CandleData
+console.log(state.CandleData,"incandle data");
   const chartContainerRef = useRef();
   const chart = useRef();
   const resizeObserver = useRef();
   const [scrollPosition, setscrollPosition] = useState(0)
-console.log(data,"dataaaa");
   useEffect(() => {
     chart.current = createChart(chartContainerRef.current, {
       width: chartContainerRef.current.clientWidth,
@@ -60,18 +41,15 @@ console.log(data,"dataaaa");
         mode: CrosshairMode.Normal,
       },
       priceScale: {
-        autoScale: true,
         borderColor: '#485c7b',
       },
       timeScale: {
         borderColor: '#485c7b',
         rightOffset: 2,
-        secondsVisible: false,
-        timeVisible: true,
       },
     });
 
-
+    // chart.current.timeScale().getVisibleRange()
     const candleSeries = chart.current.addCandlestickSeries({
       upColor: '#4bffb5',
       downColor: '#ff4976',
@@ -81,7 +59,7 @@ console.log(data,"dataaaa");
       wickUpColor: '#838ca1',
     });
 
-    candleSeries.setData(data);
+    candleSeries.setData(CandleData);
     // var lastClose = data[data.length - 1].close;
     // var lastIndex = data.length - 1;
 
@@ -173,9 +151,8 @@ console.log(data,"dataaaa");
     // ];
     // candleSeries.setMarkers(markers);
 
-  }, []);
+  }, [CandleData]);
 
-  // Resize chart on container resizes.
   useEffect(() => {
     resizeObserver.current = new ResizeObserver(entries => {
       const { width, height } = entries[0].contentRect;
@@ -186,15 +163,6 @@ console.log(data,"dataaaa");
     });
 
     resizeObserver.current.observe(chartContainerRef.current);
-    // chart.current.timeScale().subscribeVisibleTimeRangeChange(function() {
-    //   console.log("working in onject");
-    //   var buttonVisible = chart.current.timeScale().scrollPosition();
-    //   console.log("buttom",buttonVisible);
-    //   setscrollPosition(buttonVisible)
-    // });
-    // let a = chart.current.timeScale().scrollPosition()
-    // setscrollPosition(a)
-    // console.log(a, "aaa");
     return () => resizeObserver.current.disconnect();
   }, []);
 

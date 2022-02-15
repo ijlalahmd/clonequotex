@@ -26,29 +26,36 @@ function App() {
   const { state, dispatch } = useContext(GlobalContext);
 
   React.useEffect(() => {
-    const api3 = 'https://currencydatafeed.com/api/timeframe.php?currency=EUR/USD&from=2018-04-18&to=2021-01-10&token=us0bqmdc9s35b6yn5imx';
+    const api3 = 'https://currencydatafeed.com/api/timeframe.php?currency=EUR/USD&from=2020-04-18&to=2021-04-30&token=us0bqmdc9s35b6yn5imx';
 
     Axios.get(api3).then((response) => {
-      let apidata = response.data.currency.data
+      let apidata = response.data.currency.data.reverse()
       //  apidata.map((item)=>{
       //    return (
       //       console.log("ass",Number(item.open))
       //      )})
-      apidata.map((item) => { return { time: item.date, open:+item.open, high:+item.high, low:+item.low, close:+item.close } });
-      const newArrayOfObj = apidata.map(({
-        date: time,
-      ...rest
-      }) => ({
-       ...rest,
-        time
-      }));
-      dispatch({ type: "UPDATE_CANDLE_DATA", payload: newArrayOfObj });
-      newArrayOfObj.map((item) => {
-        return (
-          console.log("ass type of ", typeof (item.open))
-        )
+      apidata.map((item)=>{
+        return(
+          console.log(item,"item")
+          )
       })
-      console.log(newArrayOfObj, "aaaaa");
+      let newArrayOfObj = apidata.map((item) => { return { time: item.date.substr(0,item.date.indexOf(' ')), open:+item.open, high:+item.high, low:+item.low, close:+item.close } });
+      console.log(newArrayOfObj, "checking data in apps");
+
+      // const newArrayOfObj = apidata.map(({
+      //   date: time,
+      // ...rest
+      // }) => ({
+      //  ...rest,
+      //   time
+      // }));
+      dispatch({ type: "UPDATE_CANDLE_DATA", payload: newArrayOfObj });
+      // newArrayOfObj.map((item) => {
+      //   return (
+      //     console.log("ass type of ", typeof (item.open))
+      //   )
+      // })
+      // console.log(newArrayOfObj, "checking data in apps");
 
 
     });
