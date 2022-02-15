@@ -25,7 +25,8 @@ import WifiTetheringOutlinedIcon from '@mui/icons-material/WifiTetheringOutlined
 import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 //import { Link } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-
+import Logo from "../../Asset/Images/Logo/logo1.png"
+import LogoText from "../../Asset/Images/Logo/logoText.png"
 
 const drawerWidth = 240;
 
@@ -165,17 +166,21 @@ export default function MiniDrawer() {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" noWrap component="div">
-                     
                        <IconButton
                         color="inherit"
                         aria-label="open drawer"
                         edge="start"
-                    >
-                        <MenuIcon />
+                        edge="start"
+                     >
+                        <img src={Logo} alt="Logo i" height={50} width={50} />
                         
-                    </IconButton>
+                    <Typography variant="h6" noWrap component="div"  sx={{
+                            marginLeft: '16px',
+                        }}>
+                     
+                       FX OPTION.IO
                     </Typography>
+                    </IconButton>
                 </Toolbar>
             </AppBar>
             <Drawer variant="permanent"  open={open}  PaperProps={{

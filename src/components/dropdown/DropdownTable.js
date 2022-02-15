@@ -23,7 +23,16 @@ export const DropdownTable = () => {
     if (!post) return null;
     console.log(post.quotes, "post");
     let open = state.dropDownOpen
-    const pushData = (val, i) => {
+    const pushData = async (val, i) => {
+        console.log("working in dropdown");
+        const api3 =  'https://currencydatafeed.com/api/timeframe.php?currency=USD/AED&from=2020-04-18&to=2021-04-30&token=us0bqmdc9s35b6yn5imx';
+
+    await Axios.get(api3).then((response) => {
+      let apidata = response.data.currency.data.reverse()
+      let newArrayOfObj = apidata.map((item) => { return { time: item.date.substr(0,item.date.indexOf(' ')), open:+item.open, high:+item.high, low:+item.low, close:+item.close } });
+      dispatch({ type: "UPDATE_CANDLE_DATA", payload: newArrayOfObj });
+
+    });
         let array = state?.dataArray
         let value = post.quotes[val]
         let obj = {

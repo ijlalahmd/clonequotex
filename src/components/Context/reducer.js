@@ -1,6 +1,7 @@
 export let data = {
    dataArray:[],
    Trade:[],
+   CandleData:[],
    dropDownOpen:false,
    showGraphType:"Candle"
 
@@ -12,6 +13,12 @@ export function reducer(state, action) {
             return {
                 ...state,
                 dataArray: action.payload
+            }
+        }
+        case "UPDATE_CANDLE_DATA": {
+            return {
+                ...state,
+                CandleData: action.payload
             }
         }
         case "UP_TRADE": {
