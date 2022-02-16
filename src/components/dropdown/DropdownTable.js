@@ -24,8 +24,11 @@ export const DropdownTable = () => {
     console.log(post.quotes, "post");
     let open = state.dropDownOpen
     const pushData = async (val, i) => {
-        console.log("working in dropdown");
-        const api3 =  'https://currencydatafeed.com/api/timeframe.php?currency=USD/AED&from=2020-04-18&to=2021-04-30&token=us0bqmdc9s35b6yn5imx';
+        console.log(val,"working in dropdown");
+        const cur1=val.slice(0,3)
+        const cur2=val.slice(3,6)
+        let currency =[val.slice(0, 3), "/", val.slice(3)].join('')
+        const api3 =  `https://currencydatafeed.com/api/timeframe.php?currency=${currency}&from=2020-04-18&to=2021-04-30&token=us0bqmdc9s35b6yn5imx`;
 
     await Axios.get(api3).then((response) => {
       let apidata = response.data.currency.data.reverse()

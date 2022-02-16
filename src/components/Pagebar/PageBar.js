@@ -28,6 +28,12 @@ export const  PageBar = ({ title }) => {
      let oldTrade=state.Trade;
      oldTrade.push("click")
      dispatch({ type: "UP_TRADE", payload: oldTrade });
+     let lastData=state.CandleData.slice(-1 )
+     const pushData = Object.assign({}, ...lastData);
+     console.log("pushData", Object.values(pushData.time));
+     state.setMarker.push(lastData)
+     console.log(state.setMarker,"marker upp");
+    //  dispatch({ type: "UPDATE_MARKER", payload: lastData });
 
     }
   return (

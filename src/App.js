@@ -30,32 +30,12 @@ function App() {
 
     Axios.get(api3).then((response) => {
       let apidata = response.data.currency.data.reverse()
-      //  apidata.map((item)=>{
-      //    return (
-      //       console.log("ass",Number(item.open))
-      //      )})
-      apidata.map((item)=>{
-        return(
-          console.log(item,"item")
-          )
-      })
+
       let newArrayOfObj = apidata.map((item) => { return { time: item.date.substr(0,item.date.indexOf(' ')), open:+item.open, high:+item.high, low:+item.low, close:+item.close } });
       console.log(newArrayOfObj, "checking data in apps");
 
-      // const newArrayOfObj = apidata.map(({
-      //   date: time,
-      // ...rest
-      // }) => ({
-      //  ...rest,
-      //   time
-      // }));
       dispatch({ type: "UPDATE_CANDLE_DATA", payload: newArrayOfObj });
-      // newArrayOfObj.map((item) => {
-      //   return (
-      //     console.log("ass type of ", typeof (item.open))
-      //   )
-      // })
-      // console.log(newArrayOfObj, "checking data in apps");
+
 
 
     });
