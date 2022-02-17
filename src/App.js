@@ -27,11 +27,15 @@ function App() {
 
   React.useEffect(() => {
     const api3 = 'https://currencydatafeed.com/api/timeframe.php?currency=EUR/USD&from=2020-04-18&to=2021-04-30&token=us0bqmdc9s35b6yn5imx';
-
-    Axios.get(api3).then((response) => {
+    const api4='https://currencydatafeed.com/api/intraday1m.php?currency=EUR/USD&from=2022-02-16%2000:00:00&to=2022-02-17%2000:00:00&token=us0bqmdc9s35b6yn5imx'
+    const toTimestamp = (strDate) => {  
+      const dt = Date.parse(strDate);  
+      return dt / 1000;  
+    }
+    Axios.get(api4).then((response) => {
       let apidata = response.data.currency.data.reverse()
 
-      let newArrayOfObj = apidata.map((item) => { return { time: item.date.substr(0,item.date.indexOf(' ')), open:+item.open, high:+item.high, low:+item.low, close:+item.close } });
+      let newArrayOfObj = apidata.map((item) => { return { time: toTimestamp(item.date), open:+item.open, high:+item.high, low:+item.low, close:+item.close } });
       console.log(newArrayOfObj, "checking data in apps");
 
       dispatch({ type: "UPDATE_CANDLE_DATA", payload: newArrayOfObj });

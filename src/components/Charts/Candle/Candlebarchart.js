@@ -9,6 +9,12 @@ export const Candlestick = (props) => {
   const { state, dispatch } = useContext(GlobalContext);
 
   const chartContainerRef = useRef();
+  const api4 =
+    "https://marketdata.tradermade.com/api/v1/live?currency=EURUSD&api_key=nfSDuqQS7TaTxpMIhyDa%20";
+
+  Axios.get(api4).then((response) => {
+    let apidata = response.data.quotes;
+  });
 
   useEffect(() => {
     const handleResize = () => {
@@ -34,6 +40,14 @@ export const Candlestick = (props) => {
       },
       priceScale: {
         borderColor: "#485c7b",
+        autoScale: true,
+      },
+      priceFormat: {
+        type: "custom",
+        minMove: 0.00000001,
+        formatter: (price) => {
+          return price.toFixed(8);  
+        },
       },
       crosshair: {
         mode: CrosshairMode.Normal,
@@ -41,10 +55,12 @@ export const Candlestick = (props) => {
       timeScale: {
         borderColor: "#485c7b",
         rightOffset: 2,
+        timeVisible: true,
+        secondsVisible: true,
       },
     });
     // chart.timeScale().fitContent();
-    chart.timeScale().resetTimeScale()
+    chart.timeScale().resetTimeScale();
     const CandlestickSeries = chart.addCandlestickSeries({
       upColor: "#4bffb5",
       downColor: "#ff4976",
@@ -54,28 +70,43 @@ export const Candlestick = (props) => {
       wickUpColor: "#838ca1",
     });
     CandlestickSeries.setData(data);
-    let a=10
+    CandlestickSeries.applyOptions({
+      priceFormat: {
+          type: 'price',
+          precision: 4,
+          minMove: 0.0001,
+      },
+  });
+    let ask=1.1432;
+    let open1=ask
+    let count=0
+    let time=1645038000
     setInterval(() => {
-      if (a==0){
-        a=29
+      setInterval(() => {
+        count++
+       time++
+        ask=ask+0.0001
+      }, 1000);
+     
+      CandlestickSeries.update({ time: time, open: open1 ,high: ask, low:ask, close: ask });
+      if (count==59) {
+        open1=ask
       }
-      a++
-   
-      CandlestickSeries.update({ time: `2021-05-${a}`, open: 1.2102  ,high: 1.2123, low: 1.2123, close: 1.21123 });
-    }, 6000);
-   
-      // state.setMarker.map((item)=>{
-      //   console.log(typeof item,"item");
-      //   CandlestickSeries.setMarkers([
-      //     {
-      //       time: item,
-      //       position: "aboveBar",
-      //       color: "white",
-      //       shape: "circle",
-      //     },
-      //   ])
-      // })
- 
+      console.log(ask,"ask values checking");
+    }, 60000);
+
+    // state.setMarker.map((item)=>{
+    //   console.log(typeof item,"item");
+    //   CandlestickSeries.setMarkers([
+    //     {
+    //       time: item,
+    //       position: "aboveBar",
+    //       color: "white",
+    //       shape: "circle",
+    //     },
+    //   ])
+    // })
+
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
