@@ -7,6 +7,7 @@ import './App.css';
 //import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 import { Landingpage } from './pages/landingpage/Landingpage';
+import {Sign} from "../src/components/Sign/Sign"
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Trade } from './pages/trading/Trade'
 import Account from './pages/Account/Account'
@@ -49,6 +50,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Homepage />} />
+          <Route exact path="/Sign" element={<Sign />} />
           <Route exact path="/trade" element={<Trade />} />
           <Route exact path="/Account" element={<Account />} />
           <Route exact path="/deposit" element={<Deposit />} />

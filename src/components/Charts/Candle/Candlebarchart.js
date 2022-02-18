@@ -77,9 +77,9 @@ export const Candlestick = (props) => {
           minMove: 0.0001,
       },
   });
-    let ask=1.1432;
-    let open1=ask
-    let count=0
+      let ask=1.1432;
+      let open1=ask
+      let count=0
     let time=1645038000
     setInterval(() => {
       setInterval(() => {

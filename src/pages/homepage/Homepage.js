@@ -6,8 +6,8 @@ import { Sign } from '../../components/Sign/Sign'
 const Homepage = () => {
   return(
 <div>
-   {/* <Landing />  */}
-   <Sign />
+   <Landing /> 
+   {/* <Sign /> */}
 </div>
   ) 
   

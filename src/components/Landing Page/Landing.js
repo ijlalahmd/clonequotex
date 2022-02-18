@@ -1,9 +1,21 @@
 import React from "react";
 import "./Landing.css";
 import Typewriter from "typewriter-effect";
+import {
+  Link
+} from "react-router-dom";
 export const Landing = () => {
   return (
     <div className="landingMain">
+      <div className="landingSignBtns">
+      <Link className="landingBtns" to="/Sign">
+          log in
+        </Link >
+        <Link className="landingBtns" to="/Sign">
+          sign in 
+        </Link >
+
+      </div>
       <div className="landigWrapper">
         <div className="landingContent">
           <span>DIGITAL MARKETING</span>

@@ -13,6 +13,7 @@ export const SignIn = () => {
             placeholder="First Name"
             type="text"
             className="form-control form-control"
+            required
           />
         </div>
         <div className="form-group">
@@ -24,6 +25,7 @@ export const SignIn = () => {
             placeholder="Enter Email"
             type="password"
             className="form-control form-control"
+            required
           />
         </div>
         <div className="form-group">
@@ -35,6 +37,7 @@ export const SignIn = () => {
             placeholder="Enter password"
             type="password"
             className="form-control form-control"
+            required
           />
         </div>
         <div className="custom-control custom-checkbox">
@@ -43,14 +46,12 @@ export const SignIn = () => {
             type="checkbox"
             className="custom-control-input form-check-input"
           />
-          <label htmlFor="customControlInline" className="custom-control-label">
+          {/* <label htmlFor="customControlInline" className="custom-control-label">
             Remember me
-          </label>
+          </label> */}
         </div>
         <div className="mt-3">
-          <button className="SignInbtn">
-            Sign in
-          </button>
+          <input type="submit" value="Sign In" className="SignInbtn" />
         </div>
         <div className="mt-4 pt-1 mb-0 text-center">
           <p className="mb-0">
