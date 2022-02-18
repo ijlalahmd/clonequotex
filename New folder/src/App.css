@@ -1,0 +1,9 @@
+
+.App{
+  padding: 40px;
+}
+.chart{
+  height: 500px !important ;
+  width: 100% !important;
+
+}
