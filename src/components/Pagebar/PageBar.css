@@ -164,7 +164,7 @@
     line-height: 18px;
     text-align: center;
 }
-input { 
+.pageBarCont input { 
     color: white !important;
     opacity: 1; /* Firefox */
 }

@@ -10,19 +10,13 @@ import { GlobalContext } from "../../Context/context";
 export const Candlestick = (props) => {
   const { state, dispatch } = useContext(GlobalContext);
   const [zec, setzec] = useState(state.setMarker)
-  console.log(new Date / 1E3 | 0, "new Date / 1E3 | 0 ");
-  useEffect(() => {
-      console.log("marker zec zec zeczec");
-  }, [zec])
   let dat = Adata.quotes.reverse();
-  console.log(dat, "dat");
   console.log(state.setMarker, "marker in candle");
   const toTimestamp = (strDate) => {
     const dt = Date.parse(strDate);
     return dt / 1000;
   }
   let newArrayOfObj = dat.map((item) => { return { time: toTimestamp(item.date), open: item.open, high: item.high, low: item.low, close: item.close } });
-  console.log(newArrayOfObj, "data data data");
   // const api4 =
   //   "https://marketdata.tradermade.com/api/v1/live?currency=EURUSD&api_key=nfSDuqQS7TaTxpMIhyDa%20";
 
@@ -146,7 +140,7 @@ export const Candlestick = (props) => {
       //   console.log(response);
       //   console.log(apidata);
         // let ask = apidata.map((item) => { return (item.ask) })
-        let ask=Math.random() * (1.14 - 1.13) + 1;
+        let ask=Math.random() * (1.3 - 1.12) + 1.12;
         mergeTickToBar(ask);
         if (++ticksInCurrentBar === 60) {
           // move to next bar
@@ -162,7 +156,7 @@ export const Candlestick = (props) => {
           ticksInCurrentBar = 0;
 
         } else {
-          askvalue = ask
+          askvalue = askvalue +0.00001
         }
       // });
     }, 1000);

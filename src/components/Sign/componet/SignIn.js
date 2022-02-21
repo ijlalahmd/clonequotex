@@ -1,9 +1,14 @@
 import React from "react";
-
+import { useNavigate } from "react-router-dom";
 export const SignIn = () => {
+  let navigate = useNavigate();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    navigate('/trade');
+  };
   return (
     <div className="SignInWrapper">
-      <form className="">
+      <form className="" onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="firstname" className="">
             First Name
@@ -23,7 +28,7 @@ export const SignIn = () => {
           <input
             id="email"
             placeholder="Enter Email"
-            type="password"
+            type="Email"
             className="form-control form-control"
             required
           />

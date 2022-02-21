@@ -11,7 +11,7 @@ export const PageSideBar = () => {
     var a = item.val
     var z = [a.slice(0, 3), "/", a.slice(3)].join('')
     return z
-  }) : null)
+  }) : ["USD/EUR"])
   return (
     <div className='PageSideBar'>
       <SideBarTopBtn />

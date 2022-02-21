@@ -62,8 +62,10 @@
     color: #fff;
 }
 .deal-list__items {
-    height: calc(100% - 60px);
+    /* height: calc(100% - 60px); */
+    height: 200px;
     padding: 0 6px;
+    padding-bottom: 5px;
     margin-top: 14px;
     overflow: auto;
 }
@@ -172,7 +174,11 @@
 .trades-list-item__close .trades-list-item__countdown {
     font-weight: 400;
 }
-
+.trades-list__item+.trades-list__item {
+    padding-top: 12px;
+    margin-top: 12px;
+    border-top: 1px solid #ffffff26;
+}
 .trades-list-item__countdown {
     color: #fff;
     margin-left: auto;
