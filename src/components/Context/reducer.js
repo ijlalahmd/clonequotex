@@ -2,7 +2,7 @@ export let data = {
   dataArray: [],
   Trade: [],
   CandleData: [],
-  setMarker:["2021-04-19"],
+  setMarker:[],
   dropDownOpen: false,
   showGraphType: "Candle",
 };

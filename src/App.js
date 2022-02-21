@@ -26,25 +26,31 @@ import { GlobalContext } from "../src/components/Context/context"
 function App() {
   const { state, dispatch } = useContext(GlobalContext);
 
-  React.useEffect(() => {
-    const api3 = 'https://currencydatafeed.com/api/timeframe.php?currency=EUR/USD&from=2020-04-18&to=2021-04-30&token=us0bqmdc9s35b6yn5imx';
-    const api4='https://currencydatafeed.com/api/intraday1m.php?currency=EUR/USD&from=2022-02-16%2000:00:00&to=2022-02-17%2000:00:00&token=us0bqmdc9s35b6yn5imx'
-    const toTimestamp = (strDate) => {  
-      const dt = Date.parse(strDate);  
-      return dt / 1000;  
-    }
-    Axios.get(api4).then((response) => {
-      let apidata = response.data.currency.data.reverse()
+  // React.useEffect(() => {
+  //   var yesterday = new Date(Date.now() - 864e5).toISOString().substring(0,19).replace("T"," ")
+  // var today =new Date().toISOString().substring(0,19).replace("T"," ")
+  // var nextMin=new Date(+new Date() - 60000*1).toISOString().substring(0,19).replace("T"," ")
+  
+  //   // const api3 = 'https://currencydatafeed.com/api/timeframe.php?currency=EUR/USD&from=2020-04-18&to=2021-04-30&token=us0bqmdc9s35b6yn5imx';
+  //   // const api4=`https://currencydatafeed.com/api/intraday1m.php?currency=EUR/USD&from=${yesterday}&to=${today}&token=us0bqmdc9s35b6yn5imx`
+  //   const api4=`https://marketdata.tradermade.com/api/v1/timeseries?currency=EURUSD&api_key=nfSDuqQS7TaTxpMIhyDa&start_date=${yesterday}&end_date=${today}&format=records&interval=minute&period=1`
+  //   const toTimestamp = (strDate) => {  
+  //     const dt = Date.parse(strDate);  
+  //     return dt / 1000;  
+  //   }
+  //   Axios.get(api4).then((response) => {
+  //     console.log(response);
+  //     let apidata = response.quotes.reverse()
 
-      let newArrayOfObj = apidata.map((item) => { return { time: toTimestamp(item.date), open:+item.open, high:+item.high, low:+item.low, close:+item.close } });
-      console.log(newArrayOfObj, "checking data in apps");
+  //     let newArrayOfObj = apidata.map((item) => { return { time: toTimestamp(item.date), open:+item.open, high:+item.high, low:+item.low, close:+item.close } });
+  //     console.log(newArrayOfObj, "checking data in apps");
 
-      dispatch({ type: "UPDATE_CANDLE_DATA", payload: newArrayOfObj });
+  //     dispatch({ type: "UPDATE_CANDLE_DATA", payload: newArrayOfObj });
 
 
 
-    });
-  }, []);
+  //   });
+  // }, []);
   return (
     <div className="App">
       <BrowserRouter>

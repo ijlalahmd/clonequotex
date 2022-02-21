@@ -43,7 +43,7 @@ export const DealList = ({ state }) => {
                                         <>
 
                                             <div className="trades-list__date">
-                                                10 February<span>{ state.Trade.length}</span>
+                                                22 February<span>{ state.Trade.length}</span>
                                             </div>
                                             <div className="trades-list__item trades-list-item trades-list-item__close">
                                                 <div className="trades-list-item__title">

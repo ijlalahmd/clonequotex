@@ -24,17 +24,19 @@ export const  PageBar = ({ title }) => {
      let newPay=Math.round(investment +cal)
     setPayout(newPay)
    }
-   const UpTrade = () => { 
+   const UpTrade = () => {
+    let lastData=state.CandleData.slice(-1 )
+    const pushData = Object.assign({}, ...lastData);
+    console.log("pushData", pushData.time);
+    let Maker=state.setMarker
+    Maker.push(pushData.time)
+    console.log(Maker,"marker upp");
+    dispatch({ type: "UPDATE_MARKER", payload: Maker });
+
      let oldTrade=state.Trade;
      oldTrade.push("click")
      dispatch({ type: "UP_TRADE", payload: oldTrade });
-     let lastData=state.CandleData.slice(-1 )
-     const pushData = Object.assign({}, ...lastData);
-     console.log("pushData", Object.values(pushData.time));
-     state.setMarker.push(lastData)
-     console.log(state.setMarker,"marker upp");
-    //  dispatch({ type: "UPDATE_MARKER", payload: lastData });
-
+     
     }
   return (
     <div className="pageBarCont">
